@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Employe {
     private  String cin;
     private  String matr;
@@ -54,6 +56,23 @@ public class Employe {
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employe employe = (Employe) o;
+        return Objects.equals(cin, employe.cin) &&Objects.equals(nom, employe.nom) ;
+    }
+
+
+
+
+    @Override
+    public int hashCode() {
+       // return Objects.hash(cin, matr, nom, prenom);
+        return cin.hashCode();
     }
 }
 

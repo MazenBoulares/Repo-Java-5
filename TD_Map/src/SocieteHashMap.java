@@ -37,7 +37,9 @@ HashMap<Employe,Departement> h= new HashMap<Employe, Departement>();
 
     };
 
-    public boolean rechercherEmploye(Employe e){};
+    public boolean rechercherEmploye(Employe e){
+        return(h.contains(e)):
+    };
     public boolean rechercherDepartement(Departement e){};
 
 }
