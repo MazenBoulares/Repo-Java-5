@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Departement {
     private  int id;
     private  String nom;
@@ -32,5 +34,18 @@ public class Departement {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Departement that = (Departement) o;
+        return id == that.id && Objects.equals(nom, that.nom);
+    }
+
+    @Override
+    public int hashCode() {
+        return id+nom.hashCode();
     }
 }
