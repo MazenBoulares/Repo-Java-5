@@ -38,9 +38,11 @@ HashMap<Employe,Departement> h= new HashMap<Employe, Departement>();
     };
 
     public boolean rechercherEmploye(Employe e){
-        return(h.contains(e)):
+        return (h.containsKey(e));
     };
-    public boolean rechercherDepartement(Departement e){};
+    public boolean rechercherDepartement(Departement e){
+        return (h.containsValue(e));
+    };
 
 }
 //is equals used in hashmap ?
