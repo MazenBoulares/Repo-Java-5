@@ -1,9 +1,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        //test de hashmap
+        // *******************
+        // * Test de hashMap *
+        // *******************
 
-        SocieteHashMap societe = new SocieteHashMap();
+       SocieteHashMap societe = new SocieteHashMap();
 
         Employe e1 = new Employe("654789","ZHT6HG","Mazen","Boulares");
         Employe e2 = new Employe("987456","GHT574","Asma","Masmoudi");
@@ -30,7 +32,7 @@ public class Main {
         societe.afficherLesDepartements();
 
         // Display department for a specific employee
-        System.out.println("\nDepartment for Alice:");
+        System.out.println("\nDepartment for Mazen Boulares:");
         Employe e = new Employe("654789","ZHT6HG","Mazen","Boulares");
         societe.afficherDepartement(e);
 
@@ -56,9 +58,57 @@ public class Main {
 
 
 
-        //test de treemap
+
+            // *******************
+            // * Test de Treemap *
+            // *******************
+
+        ScoieteTreeMap societe2 = new ScoieteTreeMap();
+        societe2.ajouterEmployeDepartement(e1, hr);
+        societe2.ajouterEmployeDepartement(e2, it);
+        societe2.ajouterEmployeDepartement(e3, it);
 
 
+        // Display all employees and their departments
+        System.out.println("All employees and their departments:");
+        societe2.afficherLesEmployesLeursDepartements();
+
+       // Display all employees
+        System.out.println("\nAll employees:");
+        societe2.afficherLesEmployes();
+
+        // Display all departments
+        System.out.println("\nAll departments:");
+        societe2.afficherLesDepartements();
+
+        // Display department for a specific employee
+        System.out.println("\nDepartment for Mazen Boulares:");
+        e = new Employe("654789","ZHT6HG","Mazen","Boulares");
+        societe2.afficherDepartement(e);
+
+
+
+
+
+        // Search for an employee
+
+
+         v = societe2.rechercherEmploye(e);
+        if (v) {
+            System.out.println("Employee exists.");
+        } else {
+            System.out.println("Employee doesn't exist.");
+        }
+
+        // Search for a department
+
+         d = new Departement(2,"IT");
+
+        if (societe2.rechercherDepartement(d)) {
+            System.out.println("Department IT exists.");
+        } else {
+            System.out.println("Depatemnet IT doesn't exist.");
+        }
 
 
 

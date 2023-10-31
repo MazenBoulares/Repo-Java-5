@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Employe {
+public class Employe implements Comparable<Employe> {
     private  String cin;
     private  String matr;
     private  String nom ;
@@ -74,5 +74,17 @@ public class Employe {
        // return Objects.hash(cin, matr, nom, prenom);
         return cin.hashCode();
     }
+
+
+    @Override
+    public int compareTo(Employe other) {
+
+        return this.nom.compareTo(other.nom);
+
+
+    }
+
+
+
 }
 
